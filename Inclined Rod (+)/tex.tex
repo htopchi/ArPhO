@@ -1,0 +1,90 @@
+\addcontentsline{toc}{section}{Inclined Rod (2)}
+\section*{Inclined Rod}
+
+\subsection*{Problem}
+
+A rod is hanged form the ceiling by its ends with
+strings of length $l_1$ and $l_2$ in such a way,
+that both strings are vertical.
+Find the natural frequencies of rods oscillations. 
+
+\subsection*{Solution}
+
+There are three modes of oscillation.
+The first one is the oscillation within the strings' plane,
+and the other two include oscillations perpendicular to it
+alongside with rotational oscillations.
+
+Consider the first mode.
+Let's denote the small inclinations of the strings
+with length $l_1$ and $l_2$ by $\alpha$ and $\beta$ correspondingly.
+The heights of the ends of the rod don't change,
+so the constancy of rod length is written as $l_1 \alpha = l_2 \beta$.
+We will be doing substitutions $\sin{\alpha} \rightarrow \alpha$
+and $\cos{\alpha} \rightarrow 1$ without mentioning it.
+There is also no rotation, so $T_1 = T_2$ (the string tension forces).
+
+If the displacement of the rod is $x$,
+then $\alpha = x / l_1$ and $\beta = x / l_2$.
+The overall horizontal force will be
+\begin{equation}
+    F = -T_1 \sin{\alpha} - T_2 \sin{\beta} =
+    \frac{mg}{2}\inb({\frac{1}{l_1} + \frac{1}{l_2}}) x
+\end{equation}
+As $F = m \ddot{x}$, 
+the corresponding frequency will be
+\begin{equation}
+    \omega_1 = \sqrt{\frac{g}{2} \inb({\frac{1}{l_1} + \frac{1}{l_2}})}
+\end{equation}
+
+For the other two modes let's use the same $\alpha$ and $\beta$,
+but here they will be showing the inclinations perpendicular ot strings' plane.
+The displacements of rod's edges will be $l_1 \alpha$ and $l_2 \beta$.
+The displacement $x$ of rod's center
+and rod's rotation $\gamma$ around the vertical axis are then give by
+\begin{equation}
+\begin{split}
+    x &= \frac{l_1 \alpha + l_2 \beta}{2} \\
+    \gamma &= \frac{l_1 \alpha - l_2 \beta}{d}
+\end{split}
+\hspace{1cm} \implies \hspace{1cm}
+\begin{split}
+    \alpha &= \frac{2 x + \gamma d}{2 l_1} \\
+    \beta &= \frac{2 x - \gamma d}{2 l_2}
+\end{split}
+\end{equation}
+where $d$ is the horizontal distance between the strings.
+The string tensions are also equal to $mg / 2$ in this case.
+The motion equations are then written as
+\begin{equation}
+\begin{split}
+    m \ddot{x} = -T_1 \sin{\alpha} - T_2 \sin{\beta} &=
+    -\frac{mg}{2} (\alpha + \beta) =
+    -\frac{mx}{2} \Sigma - \frac{md\gamma}{4} \Delta \\
+    I \ddot{\gamma} = -T_1 \sin{\alpha} \frac{d}{2} + T_2 \sin{\beta} \frac{d}{2} &=
+    -\frac{mgd}{2} (\alpha - \beta) = 
+    -\frac{mdx}{4} \Delta - \frac{md^2\gamma}{8} \Sigma
+\end{split}
+\end{equation}
+where $I = ml^2 / 12$ is the moment of inertia of the rod
+against the vertical axis through its center,
+$\Sigma = g (l_1^{-1} + l_2^{-1})$ and $\Delta = g(l_1^{-1} - l_2^{-1})$.
+Denoting $x = k d\gamma$ for a specific mode we get
+\begin{equation}
+\begin{split}
+    k\ddot{\gamma} = -\frac{k \Sigma}{2} \gamma - \frac{\Delta}{4} \gamma\\
+    \frac{\ddot{\gamma}}{12} = -\frac{k \Delta}{4} \gamma - \frac{\Sigma}{8} \gamma
+\end{split}
+\hspace{1cm} \implies \hspace{1cm}
+\begin{split}
+    \omega^2 &= -\frac{\Sigma}{2} - \frac{\Delta}{4k}\\
+    \omega^2 &= -3 k \Delta - \frac{3 \Sigma}{2}
+\end{split}
+\end{equation}
+After some trivial calculations one can get
+\begin{equation}
+    \omega_{2, 3} = \sqrt{\frac{g}{l_1} + \frac{g}{l_2}
+    \pm g \sqrt{\frac{1}{l_1^2} + \frac{1}{l_2^2} - \frac{1}{l_1 l_2}}}
+\end{equation}
+
+Notice that two of the frequencies reduce to $\sqrt{g/l}$ in case $l_1 = l_2 = l$.

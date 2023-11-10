@@ -1,0 +1,222 @@
+\addcontentsline{toc}{section}{One-Dimensional Matter (5)}
+\section*{One-Dimensional Matter}
+
+\subsection*{Problem}
+
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
+
+\begin{enumerate}
+    \item What dipole moment will a conducting ball of radius $R$ gain
+        in an electric field of strength $E$?
+\end{enumerate}
+
+Suppose a system that consists of infinitely many balls of radius $R$
+placed along a single line with distance $l \gg R$ between each other.
+The balls are charged $\pm Q$, with any neighboring charges being opposite.
+The whole system is placed inside an electric filed $E$
+perpendicular to the axis of alignment.
+
+\begin{enumerate}
+    \setcounter{enumi}{1}
+    \item Find the interaction energy of one ball with all the others.
+    Charge induction because of the interaction can be neglected.
+\end{enumerate}
+
+Suppose all the balls are put on a single thin non-conducting rod,
+so they can't move in any other direction then the rod itself.
+No friction is involved.
+
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item Calculate the equilibrium distance $l_0$ between the balls.
+    \item Determine the longitudinal wave propagation speed in this system,
+    knowing that in ordinary matter the speed of sound is given by $c = \sqrt{Y/\rho_0}$,
+    where $Y$ is the Young's modulus and $\rho_0$ is the density.
+    All balls have density $\rho$.
+\end{enumerate}
+
+Suppose the radii of the balls are not equal,
+but it is not considerable for nearby balls.
+In other words the ball radius slowly changes
+when moving along the the arrangement axis.
+Of course a radius of a single ball remains constant.
+Let's also say the electric field changes over time,
+but it's always uniform.
+
+At some time point $t_c$
+one creates a mechanical signal of duration $\Delta t_c$ inside the system.
+$\Delta t_c$ is much bigger then the characteristic time of $E$-s change.
+Some long time later the signal is observed and it has duration $\Delta t_0$.
+Assume that the distance between the observation and creation points
+is much larger then the length of the signal,
+which itself is much bigger than the distance between the balls.
+
+\begin{enumerate}
+    \setcounter{enumi}{4}
+    \item Find the strength of the electric field at time point $t_c$,
+    if it was $E_0$ when the signal was observed.
+\end{enumerate}
+
+\subsection*{Useful information}
+\begin{itemize}
+\item Some expressions of knows sums
+\begin{equation}
+    \sum_{k=1}^{\infty} \frac{(-1)^k}{k} = -\ln{2}
+    \hspace{1cm}
+    \sum_{k=1}^{\infty} \frac{1}{k^2} = \frac{\pi^2}{6}
+    \hspace{1cm}
+    \sum_{k=1}^{\infty} \frac{1}{k^3} = \zeta
+\end{equation}
+
+\item Using the ball index as a coordinate might be a good idea.
+
+\end{itemize}
+
+\subsection*{Solution}
+
+\begin{enumerate}
+    \item Dipole moment of a ball in external field
+\end{enumerate}
+
+This is a famous problem.
+The only reason of including it here is that the result is needed later.
+If we consider two uniformly charged balls of radius $R$ and charges $\pm q$,
+with displacement $\vec{d} \ll R$,
+the result will be a non-uniformly charged sphere of radius $R$.
+
+To calculate the field inside this object
+we have to sum up the fields of the two balls.
+It is known, that at some distance $r$ form the center
+only the charge "inside" that distance crates field.
+Suppose the ball with charge $-q$ is at $0-0$
+and the other one is at $\vec{d}$.
+The dipole moment is $\vec{P} = q \vec{d}$.
+Their field is then given by
+\begin{equation}
+    E(\vec{r}) = \frac{-k q}{r^2} \cdot \frac{r^3}{R^3} \cdot \frac{\vec{r}}{r} +
+        \frac{k q}{r_d^2} \cdot \frac{r_d^3}{R^3} \cdot \frac{\vec{r_d}}{r_d} =
+        -\frac{kq}{R^3}(\vec{r} - \vec{r}_d) = -\frac{k \vec{P}}{R^3}
+\end{equation}
+where $\vec{r}_d = \vec{r} - \vec{d}$.
+
+As the field inside is uniform,
+once inside an external electric field,
+the ball will charge in way we just discussed
+to compensate the external field inside of it
+(the field in a conductor should be $0$).
+This will be achieved if the ball gains dipole moment
+$\vec{P} = \vec{E} R^3 / k$.
+
+\begin{enumerate}
+    \setcounter{enumi}{1}
+    \item Interaction energy
+\end{enumerate}
+
+The interaction energy consists of two components:
+charge-charge interactions and dipole-dipole interactions.
+Any charge-dipole interaction in the discussed system is $0$,
+as the "charges" of dipoles are equally displaced in direction
+perpendicular to the one connecting them to the single charge.
+
+The sum of charge interaction energies is simply given by
+\begin{equation}
+    \frac{W_{cc}}{2} = -\frac{kQ^2}{l} + \frac{kQ^2}{2l} - \frac{kQ^2}{3l} + \cdots =
+    -\frac{kQ^2}{l} \ln{2}
+\end{equation}
+where the overall $1/2$ makes sure we sum up over the balls
+both to the right and to the left of the considered one.
+
+To calculate a single dipole-dipole interaction energy
+let's depict each dipole as charges $\pm q$ with displacement $d$.
+The dipoles are aligned, and their distance is $r$.
+The energy is then given by
+\begin{equation}
+    W^{(s)}_{dd} = \frac{2kq^2}{r} - \frac{2kq^2}{\sqrt{r^2 + d^2}} =
+    \frac{2 k q^2}{r} \inb({1 - \frac{1}{\sqrt{1+(d/r)^2}}}) =
+    \frac{k q^2 d^2}{r^3}
+\end{equation}
+
+Summation by $r \in \{l, 2l, 3l, ...\}$ (each twice) produces
+\begin{equation}
+    W_{dd} = \frac{2 k P^2}{l^3} \zeta
+\end{equation}
+where $P$ is the dipole moment $qd$.
+The overall energy in then just $W = W_{cc} + W_{dd}$.
+
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item Equilibrium distance
+\end{enumerate}
+
+The condition for an equilibrium is the condition of minimal energy.
+\begin{equation}
+    \derivative{W}{l} = \frac{k Q^2}{l^2} 2\ln{2} - \frac{k P^2}{l^4} 6\zeta
+\end{equation}
+and after plugging in the expression for $P$,
+the condition $\text{d}W/\text{d}l = 0$ leads to
+\begin{equation}
+    l_0 = \sqrt{\frac{3\zeta}{\ln{2}}} \cdot \frac{E R^3}{k Q}
+\end{equation}
+
+\begin{enumerate}
+    \setcounter{enumi}{3}
+    \item Speed of sound
+\end{enumerate}
+
+Firstly we have to calculate the one-dimensional analogues of $Y$ and $\rho_0$.
+The situation with $\rho_0$ is really simple.
+It should be replaced with linear density $\lambda$,
+which is simply given by $4\pi R^3 \rho / 3 l_0$.
+
+The analogue of $Y$ is something like a spring strength.
+It's the ratio of tension (instead of pressure for 3D case)
+which occurs in case of deformation $\varepsilon = \Delta l / l_0$
+to the deformation itself.
+This can be calculated as
+\begin{equation}
+    \kappa = \frac{T}{\varepsilon} = -l_0 \inb.{\derivative[2]{W}{l}}|_{l=l_0} =
+    \frac{k Q^2}{l_0^2} 4\ln{2} - \frac{k P^2}{l_0^4} 24\zeta =
+    \frac{4 \ln^2{2}}{3\zeta} \frac{k^3 Q^4}{E^2 R^6}
+\end{equation}
+and for the speed of wave we get
+\begin{equation}
+    c = \sqrt{\frac{\kappa}{\lambda}} =
+    \frac{(\ln{2})^{3/4} 3^{1/4}}{\zeta^{1/4} \pi^{1/2}}
+    \cdot \frac{k Q^{3/2}}{\rho^{1/2}} \cdot \frac{E^{3/2}}{R^3}
+\end{equation} 
+
+\begin{enumerate}
+    \setcounter{enumi}{4}
+    \item Signal in variating medium
+\end{enumerate}
+
+We have to write the equations for the head and the tail of the signal
+and try to understand what happens to it.
+For both of them we know $c(x, t) \differential{t} = \differential{x}$.
+It would be great if we could factorize $c(x, t)$ into $f(x)g(t)$. 
+
+As $E$ changes over time,
+the dependency $R(x)$ will also change.
+A more "stable" coordinate in that sense is the ball index $n$.
+This way $R$ depends only on $n$.
+The wave speed in those coordinates is given by
+$c_n = \text{d}n / \text{d}t = c / l_0 = \beta E^{1/2} R^{-6}$,
+where $\beta$ is some unimportant constant, as we will soon see.
+
+The propagation equation is written as
+$c_n(n, t) \differential{t} = \differential{n}
+\iff \beta E^{1/2}(t) \differential{t} = R^6(n) \differential{n}$.
+If we integrate both sides of the equation
+from the creation to observation for both the head and the tail, we get
+\begin{equation}
+    \beta\int\displaylimits_{t=t_c}^{t_0} E^{1/2}(t) \differential{t} =
+    \int\displaylimits_{n=n_c}^{n_0} R^6(n) \differential{n}
+    \hspace{1cm}
+    \beta\int\displaylimits_{t=t_c+\Delta t_c}^{t_0 + \Delta t_0} E^{1/2}(t) \differential{t} =
+    \int\displaylimits_{n=n_c}^{n_0} R^6(n) \differential{n}
+\end{equation}
+By equalizing the two and dropping the common parts
+of the leftover integrals we simply get
+$\beta E^{1/2}(t_c) \Delta t_c = \beta E^{1/2}(t_0) \Delta t_0$,
+which implies $E_c = E_0 (\Delta t_0 / \Delta t_c)^2$.

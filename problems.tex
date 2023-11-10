@@ -1,0 +1,76 @@
+% !TEX root = relative/or/absolute/path/to/root/file.tex
+\documentclass[12pt]{article}
+\usepackage[margin=.5in]{geometry}
+% \documentclass[12pt, a4paper]{article}
+% \renewcommand{\baselinestretch}{1.5}
+% \usepackage[left=3cm,right=1.5cm,top=2cm,bottom=2.5cm]{geometry}
+
+\usepackage{natbib}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{slashed}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{subfiles}
+\usepackage{color, colortbl}
+\usepackage{hyperref}
+\usepackage{marginnote}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xr}
+
+\newcommand{\inb}[3]{{\left#1 #2 \right#3}}
+\newcommand{\labelf}[1]{}
+\newcommand{\labele}[1]{}
+\newcommand{\reff}[1]{}
+\newcommand{\refe}[1]{}
+\newcommand{\dir}[1]{./#1}
+\newcommand{\problem}[1]{
+\newpage
+\addtocounter{section}{1}
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+
+\expandafter \csname #1 \endcsname \renewcommand{\labelf}[1]{\label{#1fig:##1}}
+\expandafter \csname #1 \endcsname \renewcommand{\labele}[1]{\label{#1eq:##1}}
+\expandafter \csname #1 \endcsname \renewcommand{\reff}[1]{(Fig.\ref{#1fig:##1})}
+\expandafter \csname #1 \endcsname \renewcommand{\refe}[1]{(\ref{#1eq:##1})}
+\inputfrom{\dir{#1}}{tex}
+}
+
+\author{Hrant Topchyan}
+\title{Author's problems on Armenian school physics olympiads}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\hfill
+
+*The number in the braces represents the difficulty.
+
+\problem{Cylinder on the Corner (+)}
+\problem{Pulley with Friction (+)}
+\problem{Combined Pulley (+)}
+\problem{Infinite non-linearity (+)}
+\problem{Inclined Rod (+)}
+\problem{Audio Casette (+)}
+\problem{Leaky Container (+)}
+\problem{Rolling in place (+)}
+\problem{Broken Symmetry (+)}
+\problem{Thick Barrel (+)}
+\problem{Field in Medium (+)}
+\problem{Light in Medium (+)}
+\problem{1D Matter (+)}
+
+\end{document}

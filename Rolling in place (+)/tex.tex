@@ -1,0 +1,68 @@
+\addcontentsline{toc}{section}{Rolling in place (3)}
+\section*{Rolling in place}
+
+\subsection*{Problem}
+
+Suppose a big horizontal disk,
+rotating around its center with angular velocity $\Omega$.
+It is possible to place a solid ball at any point of the disk
+in such a way, that the ball doesn't move.
+What will happen, if one gives velocity $\vec{v}_0$ to the ball?
+What changes if we substitute the ball with a sphere?
+There is no sliding.
+
+\subsection*{Useful information}
+\begin{itemize}
+    \item The angular velocity of the ball can be represented as
+        a vector in the plane of the disk.
+\end{itemize}
+
+\subsection*{Solution}
+
+Let's use notation $\vec{\omega}$ for ball's angular velocity,
+which is a vector direction where the ball would roll
+if it was on a static surface.
+
+Initially the ball is at some point $\vec{r}_0$ and it doesn't move,
+which means there is no friction force acting on it.
+It can be implied, that the velocity of the bottom point of it
+is the same as the speed of the disk's surface $\vec{\Omega} \times \vec{r}_0$.
+The ball's bottom point's velocity is given by $-\vec{\omega} R$,
+where $R$ is the radius of the ball.
+
+Once given velocity, the ball will start rolling around,
+but at any point $\vec{r}$ the condition
+$\vec{\Omega} \times \vec{r} = \vec{v} - \vec{\omega} R$
+should be satisfied,
+where $\vec{v}$ is the velocity of the ball's center.
+The equation is just the equality of the ball's bottom point's velocity
+to that of the disk at that specific point.
+Another thing that we know about this system,
+is that both $\vec{\omega}$ and $\vec{v}$ change due to
+the same force, which is the friction force $\vec{F}$.
+If $m$ is the mass of the ball, then
+\begin{equation}
+    \frac{2 m R^2}{5} \cdot \derivative{\vec{\omega}}{t} = -\vec{F} R
+    \hspace{1cm} m \derivative{\vec{v}}{t} = \vec{F}
+    \labele{mot_eq}
+\end{equation}
+which immediately produces
+$\differential{\vec{\omega}} R = -5 \differential{\vec{v}} / 2$.
+We can put this into the derivative of no-sliding equation.
+The result will be
+\begin{equation}
+    \vec{\Omega} \times \vec{v} \differential{t} =
+    \frac{7}{2} \differential{\vec{v}}
+\end{equation}
+So $\differential{\vec{v}}$-'s direction is to the left of $\vec{v}$,
+perpendicular to it.
+This suggests, that the ball's velocity module doesn't change,
+and the ball is doing a counterclockwise circular motion
+with angular velocity $2 \Omega / 7$.
+The radius of the circle is $7 v_0 / 2 \Omega$.
+
+The only change in case of substituting the ball with a sphere,
+is the change of factor $2/5$ in \refe{mot_eq} to $2/3$,
+which leads to alternative angular velocity of circular motion $2 \Omega / 5$
+and corresponding radius $5 v_0 / 2 \Omega$.
+

@@ -1,0 +1,302 @@
+\addcontentsline{toc}{section}{Light in Medium (5)}
+\section*{Light in Medium}
+
+\subsection*{Problem}
+
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
+
+\begin{enumerate}
+
+{\bfseries
+\item Dispersion
+}
+
+One can model the atom as a stationary object with a heavy nucleus
+and a light electron with mass $m$ and charge $q < 0$.
+We assume that electron's charge is uniformly distributed
+in a ball of radius $R$ with its center being near the nucleus.
+
+\begin{enumerate}
+    \item Find the natural frequency $\omega_0$ of the atom's oscillations.
+\end{enumerate}
+
+\hspace{.5cm}
+The emission and absorption of photons by the atom
+is the likeliest near the natural frequency of the atom.
+As long as we want the medium to be transparent for the light
+we will be using frequencies far away form the natural frequency.
+
+\hspace{.5cm}
+An electromagnetic wave is called linearly polarized
+if its electric field strength is given by
+$\vec{E} = \vec{E}_0 \cos(\omega t - k z)$ with $\vec{E}_0 \perp \hat{z}$.
+
+\begin{enumerate}
+    \setcounter{enumii}{1}
+    \item Find the low of motion of the atom
+    in a linearly polarized light with amplitude $\vec{E}$.
+
+    \item What is the strength of electric field inside a capacitor
+    with dipole moment density $p$?
+
+    \item What is the refractive index of the medium
+    with atom concentration $\rho$ for light of frequency $\omega$?
+\end{enumerate}
+
+{\bfseries
+\item Faraday effect
+}
+
+\hspace{.5cm}
+An electromagnetic wave is called circularly polarized
+if its electric field strength is given by
+$E_x = E_0 \cos(\omega t - k z)$, $E_y = \pm E_0 \sin(\omega t - k z)$.
+
+\begin{enumerate}
+    \item How will such waves be written in complex representation,
+    if we want the $x$ component to be the real part
+    and the $y$ component to be the imaginary part?
+    How is $k$ given in terms of refractive index of the medium
+    and other known parameters?
+
+    \item Find the low of motion of the atom
+    described in previous section in such field.
+\end{enumerate}
+
+\hspace{.5cm}
+Suppose the medium is placed in a magnetic field of strength $B$
+along the direction of light propagation.
+
+\begin{enumerate}
+    \setcounter{enumii}{2}
+    \item How will the magnetic field affect the motion of atoms,
+    if we consider that effect to be very small?
+
+    \item Find the refractive index of the medium with concentration $\rho$
+    inside magnetic field $B$ for clockwise and counterclockwise polarized light.
+\end{enumerate}
+
+The linearly polarized wave can be represented as
+a sum of two circularly polarized waves.
+
+\begin{enumerate}
+    \setcounter{enumii}{4}
+    \item How will the linearly polarized light be different
+    at distance $l$ in the medium?
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Useful information}
+\begin{itemize}
+    \item The light speed in medium is given by
+    $c = 1/\sqrt{\varepsilon_0 \mu_0 \varepsilon \mu}$.
+\end{itemize}
+
+\subsection*{Solution}
+
+\begin{enumerate}
+
+{\bfseries
+\item Dispersion
+}
+
+\begin{enumerate}
+    \item Atom's natural frequency
+\end{enumerate}
+
+\hspace{.5cm}
+In the whole problem we will consider a static nucleus
+and a moving electron cloud,
+as the later's mass is much smaller
+
+\hspace{.5cm}
+The interaction force between the nucleus and the electron
+is linearly proportional to the cloud's center's displacement $\vec{x}$,
+as only the part of the cloud within radius $x$ matters.
+The force on the electron is given by
+\begin{equation}
+    \vec{F} = -\frac{k q}{x^2} \cdot q\frac{x^3}{R^3} \cdot \frac{\vec{x}}{x} =
+    -\frac{k q^2}{R^3} \cdot \vec{x}
+\end{equation}
+So the natural frequency will be $\omega_0 = \sqrt{k q^2 / m R^3}$
+
+\begin{enumerate}
+    \setcounter{enumii}{1}
+    \item Stimulated motion of an atom
+\end{enumerate}
+
+\hspace{.5cm}
+The motion equation inside an external electric field if given by
+$m\ddot{\vec{x}} = -m \omega_0^2 x + E q$.
+If $E = E_0 \cos(\omega t)$ at some given point,
+we should look for $x$ in form $x = x_0 \cos(\omega t)$.
+Simple calculations lead to result
+\begin{equation}
+    x_0 = \frac{E_0 q}{m (\omega_0^2 - \omega^2)}
+    \labele{x_on_E}
+\end{equation}
+
+\hspace{.5cm}
+It might seem unnatural that $x_0$ changes the sign
+when $\omega$ passes $\omega_0$,
+but one should remember, that everything we discuss
+is correct only for $\omega$-s far form $\omega_0$.
+
+\begin{enumerate}
+    \setcounter{enumii}{2}
+    \item Electric field in a capacitor
+\end{enumerate}
+
+\hspace{.5cm}
+Consider a capacitor of area $S$ and thickness $d$,
+that is charged with surface charge density $\pm \sigma$.
+The overall dipole moment in this case is $P = \sigma S \cdot d$
+(in direction towards the plate charged with $\sigma$)
+and its density is thereby $\vec{p} = \sigma$.
+
+\hspace{.5cm}
+The electric field inside can be given by $E = \sigma / \varepsilon_0$
+towards the plate with $-\sigma$.
+So the field can be expressed in terms of $\vec{p}$ as
+\begin{equation}    
+    \vec{E} = -\vec{p} / \varepsilon_0
+    \labele{E_on_p}
+\end{equation}
+
+\begin{enumerate}
+    \setcounter{enumii}{3}
+    \item Refractive index
+\end{enumerate}
+
+\hspace{.5cm}
+The existence of a non-identity refractive index is a result
+of the medium-created electric field,
+which is a source of non-identity permittivity.
+
+\hspace{.5cm}
+Electric permittivity is the ratio of the initial external field
+to what we have in the medium as a result of superposition with the medium's field.
+The source of medium's field is the polarization of atoms
+under the influence of both external and medium-generated fields.
+We will assume medium's field to have the same $\omega$ as the external field.
+If we denote the later by $\vec{I} = \vec{I}_0 \cos(\omega t)$,
+using \refe{x_on_E} will produce the polarization of a single atom
+\begin{equation}
+    \vec{P} = ex = \frac{\inb({\vec{E} + \vec{I}}) q^2}{m (\omega_0^2 - \omega^2)}
+    \labele{p_on_EI}
+\end{equation}
+
+We already know the strength of the field that this will create.
+Plugging \refe{p_on_EI} into \refe{E_on_p} gives
+\begin{equation}
+    \vec{I} = -\frac{\rho \inb({\vec{E} + \vec{I}}) q^2}{m (\omega_0^2 - \omega^2) \varepsilon_0}
+    \implies
+    \varepsilon = \frac{\vec{E}}{\vec{E} + \vec{I}} =
+    1 + \frac{\rho q^2}{m (\omega_0^2 - \omega^2) \varepsilon_0}
+\end{equation}
+
+\hspace{.5cm}
+The corresponding refractive index is then just $n = \sqrt{\varepsilon}$.
+
+{\bfseries
+\item Faraday effect
+}
+
+\begin{enumerate}
+    \item Complex representation
+\end{enumerate}
+
+\hspace{.5cm}
+In the complex representation $\vec{E}$ is just written as
+$E = E_x + i E_y = e^{\pm i (\omega t - kz)}$.
+$k$ is found from condition $k \lambda = 2 \pi$ and the fact
+that light travels distance $\lambda$ in time $n\lambda / c$.
+So $k = n\omega / c$.
+
+\begin{enumerate}
+    \setcounter{enumii}{1}
+    \item Stimulated motion of an atom
+\end{enumerate}
+
+\hspace{.5cm}
+The motion equation is the same: $m \ddot{x} = -m \omega_0^2 + qE$.
+The difference is, that we look for the solution in form $x = x_0 e^{\pm \omega t}$.
+It is straightforward to see, that $x_0$ is that same as \refe{x_on_E}.
+
+\begin{enumerate}
+    \setcounter{enumii}{2}
+    \item Motion with magnetic field
+\end{enumerate}
+
+\hspace{.5cm}
+The magnetic field acts on the moving particles with force
+$\vec{F} = q \vec{V} \times \vec{B}$.
+If $V$ in in complex representation and $B$ is along $z$,
+it is possible to see that
+the force in complex representation
+is given by $F = -iqVB = -iq \dot{x} B$.
+This term should be added to the motion equation,
+which then becomes $m \ddot{x} = -m \omega_0^2 + qE - iq\dot{x}B$.
+The solution is then easily fount in the same form.
+\begin{equation}
+    x = x'_0 e^{\pm i (\omega t - kz)} \hspace{1cm}
+    x'_0 = \frac{E_0 q}{m (\omega_0^2 - \omega^2) \mp q B\omega} \approx
+    \frac{E_0 q}{m (\omega_0^2 - \omega^2)}
+    \inb({1 \pm \frac{qB\omega}{m (\omega_0^2 - \omega^2)} })
+\end{equation}
+
+\begin{enumerate}
+    \setcounter{enumii}{3}
+    \item Refractive indices
+\end{enumerate}
+
+\hspace{.5cm}
+The refractive indices are found just like in 1.4.
+The permittivities for the two cases are
+\begin{equation}
+    \varepsilon_{\pm} = 1+
+    \frac{\rho q^2}{m (\omega_0^2 - \omega^2) \varepsilon_0}
+    \inb({1 \pm \frac{qB\omega}{m (\omega_0^2 - \omega^2)} })
+\end{equation}
+And the refractive indices are
+\begin{equation}
+    n_{\pm} = \sqrt{\varepsilon_{\pm}} \approx n_0 \pm \Delta n
+    \hspace{1cm}
+    n_0 = \sqrt{1 + \frac{\rho q^2}{m (\omega_0^2 - \omega^2) \varepsilon_0}}
+    \hspace{1cm}
+    \Delta n = \frac{1}{n_0} \frac{\rho q^3 B\omega}{2 m^2 (\omega_0^2 - \omega^2)^2 \varepsilon_0}
+\end{equation}
+The approximation here is a simple Taylor expansion.
+
+\begin{enumerate}
+    \setcounter{enumii}{4}
+    \item Linearly polarized light
+\end{enumerate}
+
+\hspace{.5cm}
+The decomposition into two circularly polarized waves is simply written as
+\begin{equation}
+    E = E_0 e^{i (\omega t - k_+ z)} + E_0 e^{-i (\omega t - k_- z)}
+\end{equation}
+Outside of the medium, where $k_+ = k_-$,
+this is indeed a linearly polarized light with $E = 2E_0 \cos(\omega t - k z)$.
+Inside the medium $k_{\pm} = (n_0 \pm \Delta n) \omega / c = k_0 \pm \Delta k$.
+The expression for the field then can be rewritten as
+\begin{equation}
+    E = E_0 e^{i (\omega t - k_0 z)} e^{-i \Delta k z} +
+        E_0 e^{-i (\omega t - k_0 z)} e^{-i \Delta k z} 
+    = E_{B=0} e^{-i \Delta k z}
+\end{equation}
+
+\hspace{.5cm}
+Here we have an additional rotation of plane of $E$
+compared to the case without magnetic field.
+As $q < 0$, $\Delta k < 0$.
+This means that the rotation is clockwise.
+After distance $l$ the plane will have been rotated by angle
+$\beta = l \Delta n \omega / c$ counterclockwise
+($\beta$ itself is negative).
+
+\end{enumerate}
