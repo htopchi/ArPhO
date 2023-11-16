@@ -23,6 +23,8 @@
 \usepackage{marginnote}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{paralist}
+\usepackage{booktabs}
 \usepackage{xr}
 
 \newcommand{\inb}[3]{{\left#1 #2 \right#3}}
@@ -39,8 +41,8 @@
 
 \expandafter \csname #1 \endcsname \renewcommand{\labelf}[1]{\label{#1fig:##1}}
 \expandafter \csname #1 \endcsname \renewcommand{\labele}[1]{\label{#1eq:##1}}
-\expandafter \csname #1 \endcsname \renewcommand{\reff}[1]{(Fig.\ref{#1fig:##1})}
-\expandafter \csname #1 \endcsname \renewcommand{\refe}[1]{(\ref{#1eq:##1})}
+\expandafter \csname #1 \endcsname \renewcommand{\reff}[1]{Fig.\ref{#1fig:##1}}
+\expandafter \csname #1 \endcsname \renewcommand{\refe}[1]{Eq.\ref{#1eq:##1}}
 \inputfrom{\dir{#1}}{tex}
 }
 
