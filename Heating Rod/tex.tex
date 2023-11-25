@@ -1,0 +1,152 @@
+\addcontentsline{toc}{section}{Heating Rod (4)}
+\section*{Heating Rod}
+
+\subsection*{Problem}
+In this problem we will be considering a long cylindrical rod of radius $r$,
+which is made of material with temperature dependent resistivity
+$\rho = \rho_0 (1+\alpha T)$ (temperature scale is not necessarily absolute).
+The material's density is $\mu$, heat conductivity is $\kappa$,
+heat capacity is $c$, heat transfer coefficient with air is $\beta$.
+Air temperature is $\tau$.
+The rod is under voltage given by its average per unit length: $\inb<E>$.
+Radial inhomogeneity of temperature in the rod can be neglected.
+Use natation $\inb<\bullet>$ for average over space coordinate.
+
+\begin{enumerate}
+    \item Write the heat flow equation in the rod.
+    Determine the uniform equilibrium temperature $T_0$.
+    \item Consider a small non-uniform fluctuation $\delta T$ form equilibrium.
+    In which cases the system will be stable against local fluctuations?
+    Use $T_0$ without substitution for its expression.
+\end{enumerate}
+
+\subsection*{Useful information}
+\begin{itemize}
+    \item When looking for a solution of differential equation
+    for function of two arguments $f(x,t)$,
+    it can be useful to split it into linear combination of
+    basic functions $b_\lambda(x)$ with time dependent coefficients
+    $a_\lambda(t)$.
+    In this case taking sines and cosines as basic functions
+    (Fourier basis) proves useful.
+\end{itemize}
+
+\subsection*{Solution}
+
+The heat equation has three contributions: current generated heat,
+heat transfer to air and heat flow in the rod.
+In case of given $T(x)$, the current in the rod will be given by
+\begin{equation}
+    I = \frac{U}{R} = \frac{\inb<E>l}{\int_0^l
+    \rho_0 (1+\alpha T) \differential x / S} =
+    \frac{\inb<E>S}{\rho_0(1+\alpha \inb<T>)}
+\end{equation}
+where $l$ is the length of the rod, and $S$ is its cross section.
+The corresponding generated power at interval $\differential x$ is then
+\begin{equation}
+    \differential W_I = I^2 \differential R =
+    \inb({\frac{\inb<E>S}{\rho_0(1+\alpha \inb<T>)}})^2
+    \frac{\rho_0(1+\alpha T)\differential x}{S}=
+    \frac{\inb<E>^2 S}{\rho_0} \cdot
+    \frac{1+\alpha T}{(1+\alpha \inb<T>)^2} \cdot \differential x
+\end{equation}
+The power of heat exchange due to air and as a result of conductivity are
+\begin{equation}
+    \differential W_A = -\beta (T-\tau) \cdot 2\pi r \differential x 
+    \quad , \quad 
+    \differential W_C = \kappa S \frac{\differential^2 T}{\differential x^2} \differential x
+\end{equation}
+correspondingly. The overall equation is then
+\begin{equation}
+    \frac{\differential T}{\differential t} =
+    \frac{\differential W_I + \differential W_A + \differential W_A}
+    {\mu c S \differential x}=\frac{1}{\mu c}\inb({
+        \frac{\inb<E>^2}{\rho_0} \cdot
+        \frac{1+\alpha T}{(1+\alpha \inb<T>)^2} -
+        \frac{2\beta (T-\tau)}{r} +
+        \kappa \frac{\differential^2 T}{\differential x^2}
+    })
+\end{equation}
+
+The condition of uniform equilibrium temperature is given by substitution
+$T(x)=\inb<T>=T_0=\text{const}$.
+\begin{equation}
+    \frac{\inb<E>^2}{\rho_0} \cdot
+    \frac{1}{1+\alpha T_0} -
+    \frac{2\beta (T_0-\tau)}{r} = 0 \Rightarrow
+    T_0 = \frac{-(1-\alpha \tau) \pm \sqrt{(1+\alpha \tau)^2 +
+    \frac{2 \alpha r \inb<E>^2}{\rho_0 \beta}}}{2 \alpha}
+    \labele{equil}
+\end{equation}
+The '$+$' sign must be chosen, because that's the one which produces
+$T_0 = \tau$ in case $\inb<E>=0$.
+
+Now let's consider a fluctuation $T=T_0+\delta T$.
+The heat flow equation becomes
+\begin{equation}
+    \frac{\differential \delta T}{\differential t} = \frac{1}{\mu c}
+    \inb({
+        \frac{\inb<E>^2}{\rho_0} \cdot
+        \frac{1+\alpha T_0+\alpha\delta T}
+        {(1+\alpha T_0+\alpha \inb<{\delta T}>)^2} -
+        \frac{2\beta (T_0+\delta T-\tau)}{r} +
+        \kappa \frac{\differential^2 \delta T}{\differential x^2}
+    })
+    \labele{d_dev}
+\end{equation}
+as $T_0$ doesn't depend neither on $x$ nor on $t$.
+The first term can be expanded into Taylor series
+by small parameter $\delta T$.
+\begin{equation}
+    \frac{1+\alpha T_0+\alpha\delta T}
+        {(1+\alpha T_0+\alpha \inb<{\delta T}>)^2}=
+    \frac{1}{1+\alpha T_0}+\frac{\alpha \delta T}{(1+\alpha T_0)^2}
+    -\frac{2\alpha \inb<{\delta T}>}{(1+\alpha T_0)^2}
+\end{equation}
+
+Afterwards we can subtract \refe{equil} from \refe{d_dev} and get
+\begin{equation}
+    \frac{\differential \delta T}{\differential t} =\frac{1}{\mu c}
+    \inb({
+        \frac{\alpha \inb<E>^2}{\rho_0 (1+\alpha T_0)^2} \cdot
+        (\delta T - 2\inb<{\delta T}>) -
+        \frac{2\beta \delta T}{r} +
+        \kappa \frac{\differential^2 \delta T}{\differential x^2}
+    })
+\end{equation}
+For small local fluctuations on a long rod $\inb<{\delta T}>$ can be neglected,
+and we are left with
+\begin{equation}
+    \frac{\differential \delta T}{\differential t} =\frac{1}{\mu c}
+    \inb({
+        \inb({\frac{\alpha \inb<E>^2}{\rho_0 (1+\alpha T_0)^2}
+        -\frac{2\beta}{r}}) \delta T +
+        \kappa \frac{\differential^2 \delta T}{\differential x^2}
+    })\equiv A \delta T + B \frac{\differential^2 \delta T}{\differential x^2}
+\end{equation}
+
+Let's use the hint, and look for $\delta T$ decomposition
+$\sum_\lambda a_\lambda(t) \sin \lambda x$
+(the same will be true for $\cos \lambda x$).
+If looking at a component with specific $\lambda$, the equation reduces to
+\begin{equation}
+    \frac{\differential a_\lambda}{\differential t} =
+    A a_\lambda - B \lambda^2 a_\lambda
+\end{equation}
+We want all possible fluctuations to decay,
+which is provided by condition $A - B \lambda^2 < 0$ for any $\lambda$,
+implying a need for negative $A$.
+
+As a result the stability condition is given by
+\begin{equation}
+    \frac{\alpha \inb<E>^2}{\rho_0 (1+\alpha T_0)^2} < \frac{2\beta}{r}
+\end{equation}
+
+One can notice, that the two sides are exactly equal
+in case $\inb<E> \gg \sqrt{\rho_0 \beta/\alpha r}$,
+seemingly implying preservation of $\lambda=0$ (uniform) fluctuation in first order.
+But it's not a local fluctuation,
+so the term $\inb<{\delta T}>$ can't be neglected in this case.
+Anyway... it can be checked,
+that the the left-hand side is an increasing function on $\inb<E>$,
+which means that stability condition is always satisfied.
