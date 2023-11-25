@@ -23,10 +23,10 @@ after being dropped from a very big height with orientation $\alpha=0.000$
 in cases
 
 \begin{inparaenum}[a)]
-    \item $\varepsilon = 0.500$
-    \quad \item $\varepsilon = 0.600$
-    \quad \item $\varepsilon = 1.500$
-    \quad \item $\varepsilon = 1.600$
+    \item $\varepsilon = 0.800$
+    \quad \item $\varepsilon = 1.800$
+    \quad \item $\varepsilon = 3.800$
+    \quad \item $\varepsilon = 6.800$
     \quad \item $\varepsilon = \infty$
 \end{inparaenum}
 
@@ -103,12 +103,12 @@ which brings the final expression for total moment of inertia to
     I^x = I_c^x + 2 I_{ss}^x = \rho \pi R^5
     \inb({\frac{8}{15} + \frac{3}{4}\varepsilon
         + \frac{1}{3}\varepsilon^2 + \frac{1}{12}\varepsilon^3 })
-    \equiv \rho \pi R^5 f^{-1}
+    \equiv \rho \pi R^5 f
 \end{equation}
 
 The mass is given by
 \begin{equation}
-    m = \rho \pi R^3 \inb({\frac{4}{3} + \varepsilon}) \equiv \rho \pi R^3 k^{-1}
+    m = \rho \pi R^3 \inb({\frac{4}{3} + \varepsilon}) \equiv \rho \pi R^3 k
 \end{equation}
 
 {\bfseries
@@ -127,22 +127,24 @@ If velocity before collision is $V$ (upwards),
 angular velocity is $\omega$ (clockwise),
 and the force momentum is $p$ (upwards), then after the collision
 \begin{equation}
-    V \rightarrow V + \frac{p k} {\rho \pi R^3} \quad,\quad
-    \omega \rightarrow \omega - \frac{p \varepsilon R f \cos\alpha} {\rho \pi R^5}
+    V \rightarrow V + \frac{p} {k \rho \pi R^3} \quad,\quad
+    \omega \rightarrow \omega - \frac{p \varepsilon R \cos\alpha} {2f\rho \pi R^5}
 \end{equation}
-After introducing notations $\Omega = \omega \varepsilon R$ and
+After introducing notations $\Omega = \omega \varepsilon R / 2$ and
 $P=p/\rho\pi R^3$ for convenience, we can write energy conservation:
 \begin{equation}
     \frac{mV^2}{2}+\frac{I\omega^2}{2}=\text{const} \Leftrightarrow
-    \frac{V^2}{f}+\frac{\Omega^2}{k \varepsilon^2}  = 
-    \frac{(V+Pk)^2}{f}+\frac{(\Omega-Pf\cos\alpha)^2}{k \varepsilon^2}
+    f V^2+4 k \Omega^2 \varepsilon^{-2}  = 
+    f(V+Pk)^2+4k(\Omega-Pf\cos\alpha)^2 \varepsilon^{-2}
 \end{equation}
 from where $P$ can be found to be
 \begin{equation}
-    P=-2\frac{V-\Omega\cos\alpha}{k+f\cos^2\alpha\varepsilon^2}
+    P=-2k\frac{V-\Omega\cos\alpha}{1+A\cos^2\alpha}
     \labele{E-1}
 \end{equation}
-Afterwards recurrent formulae for $V$ and $\Omega$.
+with $A = k\varepsilon^2/4f$.
+Afterwards recurrent formulae for $V$ and $\Omega$ should be obtained.
+
 The fact whether the next collision will occur on the right or on the left 
 solely depends on the sign of $\Omega$.
 As we want to be able to continuously use our right side formulae,
@@ -150,31 +152,30 @@ once $\Omega$ becomes negative (next collision is expected on the left),
 we will switch and look from the other side, thus changing the sign of $\Omega$.
 The recurrent formulae (including the above-mentioned procedure) in case $\alpha=0$ will be
 \begin{equation}
-    V'=V-(V-\Omega)\frac{2}{1+f\varepsilon^2/k} \quad,\quad
-    \Omega'=\inb|{\Omega+(V-\Omega)\frac{2}{1+k/f\varepsilon^2}}|
+    V'=V-(V-\Omega)\frac{2}{1+A} \quad,\quad
+    \Omega'=\inb|{\Omega+(V-\Omega)\frac{2}{1+A^{-1}}}|
 \end{equation}
 Coefficients in the formulae can be calculated in advance for each $\varepsilon$.
 \begin{center}
-\begin{tabular}{c|c|c|c|c}
+\begin{tabular}{c|c|c|c}
     $\varepsilon$ & $k$ & $f$ &
-    \(\displaystyle \frac{2}{1+f\varepsilon^2/k} \) &
-    \(\displaystyle \frac{2}{1+k/f\varepsilon^2} \) \\
+    \(\displaystyle A \) \\
     \hline
-    $0.500$ & $0.5455$ & $0.9979$ & $1.3723$ & $0.6277$ \\
-    $0.600$ & $0.5172$ & $0.8918$ & $1.2340$ & $0.7660$ \\
-    $1.500$ & $0.3529$ & $0.3718$ & $0.5934$ & $1.4066$ \\
-    $1.600$ & $0.3409$ & $0.3415$ & $0.5611$ & $1.4389$ \\
-    $\infty$ & - & - & $0.1538$ & $1.8462$
+    $0.800$ & $2.133$ & $1.389$ & $0.2457$ \\
+    $1.800$ & $3.133$ & $3.449$ & $0.7358$ \\
+    $3.800$ & $5.133$ & $12.77$ & $1.4512$ \\
+    $6.800$ & $8.133$ & $47.25$ & $1.9899$ \\
+    $\infty$ & - & - & $3$
 \end{tabular}
 \end{center}
 If counting in terms of initial absolute velocity $V_0$, initially
 $(V,\Omega)=(-1,0)$. The question is, when the collisions stop?
 
 Downwards velocity component of the right-bottommost point
-(the one, that is going to collide) of the cylinder is $\Omega/2 - V$.
-This means, as long as $\Omega > 2V$ immediate collision (with $\alpha=0$) will follow.
+(the one, that is going to collide) of the cylinder is $\Omega - V$.
+This means, as long as $\Omega > V$ immediate collision (with $\alpha=0$) will follow.
 But there is also another possibility: no immediate collision occurs
-($\Omega < 2V$),
+($\Omega < V$),
 instead some point on the spherical cap hits the floor after some time
 (this seems possible, as those points are farther away from the center
 and thus have higher rotation velocities).
@@ -187,28 +188,26 @@ Then return height ratio is given by $(V/V_0)^2$.
 \begin{center}
 \begin{tabular}{c|cc|cc|cc|cc|cc}
     $\varepsilon$ &
-    \multicolumn{2}{c|}{$0.500$} &
-    \multicolumn{2}{c|}{$0.600$} &
-    \multicolumn{2}{c|}{$1.500$} &
-    \multicolumn{2}{c|}{$1.600$} &
+    \multicolumn{2}{c|}{$0.800$} &
+    \multicolumn{2}{c|}{$1.800$} &
+    \multicolumn{2}{c|}{$3.800$} &
+    \multicolumn{2}{c|}{$6.800$} &
     \multicolumn{2}{c}{$\infty$}\\
     \hline
     $N$ & $V$ & $\Omega$ & $V$ & $\Omega$ & $V$ & $\Omega$ & $V$ & $\Omega$ & $V$ & $\Omega$ \\
     \hline
-    0 & -1     & 0      & -1     & 0      & -1      & 0      & -1      & 0      & -1      & 0    \\
-    1 & 0.3723 & 0.6277 & 0.2340 & 0.7660 & -0.4066 & 1.4066 & -0.4389 & 1.4389 & -0.8462 & 1.8462 \\
-    2 &        &        & 0.8904 & 0.3585 & 0.6694  & 1.1437 & 0.6147  & 1.2632 & -0.4320 & 3.1243 \\
-    3 &        &        &        &        &         &        & 0.9785  & 0.3300 &  0.1152 & 3.4411 \\
-    4 &        &        &        &        &         &        &         &        &  0.6268 & 2.6991 \\
-    5 &        &        &        &        &         &        &         &        &  0.9456 & 1.1266 \\
-    6 &        &        &        &        &         &        &         &        &         &        \\
-    \hline
+    0 & -1     & 0      & -1     & 0      & -1      & 0      & -1      & 0      & -1     & 0    \\
+    1 & 0.6055 & 0.3945 & 0.1522 & 0.8478 & -0.1841 & 1.1841 & -0.3311 & 1.3311 & -0.500 & 1.500 \\
+    2 &        &        & 0.9537 & 0.2581 & 0.9322  & 1.4359 & 0.7808  & 0.8814 & 0.500  & 1.500 \\
+    3 &        &        &        &        &         &        & 0.8481  & 0.7475 & 1.000  & 0.000  \\
+    4 &        &        &        &        &         &        &         &        &        &        \\
+    \hline    
     $h/h_0$ &
-    \multicolumn{2}{c|}{$0.139$} &
-    \multicolumn{2}{c|}{$0.793$} &
-    \multicolumn{2}{c|}{$0.448$} &
-    \multicolumn{2}{c|}{$0.956$} &
-    \multicolumn{2}{c}{$0.894$}\\
+    \multicolumn{2}{c|}{$0.3667$} &
+    \multicolumn{2}{c|}{$0.9095$} &
+    \multicolumn{2}{c|}{$0.8690$} &
+    \multicolumn{2}{c|}{$0.7192$} &
+    \multicolumn{2}{c}{$1.0000$}\\
     \hline
 \end{tabular}
 \end{center}
@@ -234,10 +233,10 @@ which guaranties equivalence of the two collision equations.
 
 One can obtain value of $V$ after collision using \refe{E-1}:
 \begin{equation}
-    V'=V_0 \inb({\frac{2}{1+f\varepsilon^2\cos^2\alpha/k}-1})
+    V'=V_0 \inb({\frac{2}{1+A\cos^2\alpha}-1})
 \end{equation}
 and find the needed orientation by equalizing it to $0$. Thus
 \begin{equation}
-    \cos\alpha =  \sqrt{\frac{k}{f\varepsilon^2}}
+    \cos\alpha = A^{-1/2}
 \end{equation}
 
