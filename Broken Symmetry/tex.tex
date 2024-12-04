@@ -14,6 +14,14 @@ The temperature of the medium is $T_0 = 293 \text{ K}$.
         under voltage $U_0 = 1000 \text{ V}$.
 \end{enumerate}
 
+One could notice a strange phenomenon while solving the previous question.
+
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item Find the minimal voltage $U_m$ when the "strange behavior" occurs
+    in the system of two consequently connected thermistors.
+\end{enumerate}
+
 \subsection*{Useful information}
 \begin{itemize}
     \item The solution of equation $x^3 + k x^2 + b = 0$ is given by
@@ -63,6 +71,7 @@ which obviously will be non-symmetric.
 The equation to be solved is
 \begin{equation}
     I(U) = I(U^*) \hspace{1cm} U^* = U_0 - U
+    \labele{IUI}
 \end{equation}
 where $I(U)$ is $U / \beta T^2$ and $T$ is the solution of \refe{T}.
 
@@ -87,3 +96,28 @@ The calculations are
     \end{tabular}
 \end{center}
 At this point we are sure that the equilibrium current is $I = 1.47 \text{ A}$.
+
+One can see, that $I(U)$ is an increasing and then decreasing function on $U$.
+Therefore if the overall $U_0$ is chosen to be $U_0 > 2\arg\max(I(U))$,
+there will be three solutions to \refe{IUI} and a single solution otherwise.
+Thus $U_m = 2 \arg\max(I(U))$, which can be found numerically again.
+
+\begin{center}
+    \begin{tabular}{ c | c }
+    $U$ [V] & $I_U$ [A] \\
+    \hline
+    250 & 1.526 \\
+    500 & 1.546 \\
+    400 & 1.561 \\
+    450 & 1.555 \\
+    350 & 1.560 \\
+    375 & 1.561 \\
+    385 & 1.561 \\
+    410 & 1.560 \\
+    360 & 1.561 \\
+    \end{tabular}
+\end{center}
+
+It is clear that the precision of $U_m$ is low,
+since $I_U$ is given with 3 significant digits.
+So the answer will be $U_m = 750 \pm 50 \text{ V}$.
