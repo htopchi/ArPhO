@@ -1,0 +1,83 @@
+\addcontentsline{toc}{section}{Hanging Rope (3)}
+\section*{Hanging Rope}
+
+\subsection*{Problem}
+
+Two nails are hammered into the wall on the same level,
+with distance $w$ between them. What is the minimal length of the rope
+that can be hanged over the two nails?
+Friction effects can be neglected.
+
+\subsection*{Useful information}
+\begin{itemize}
+    \item It might be impossible to analytically determine
+    the final expression for the form of the rope explicitly.
+
+    \item At what point does a line passing through the coordinate origin
+    become tangent to the curve $e^x$?
+\end{itemize}
+
+\subsection*{Solution}
+
+The shape of the section of the rope hanging between the nails
+is governed by the infinitesimal equilibrium relations.
+If $y(x)$ is the shape, equilibrium at point $x$ is
+\begin{equation}
+    \differential T_x = 0 \quad,\quad
+    \differential T_y = \lambda g \sqrt{1+{y'}^2} \differential x
+\end{equation}
+where $\lambda$ is the rope's mass per unit length,
+$g$ is the free fall acceleration and
+$T$ is the rope's tension at a given point,
+with corresponding projections $T_x$ and $T_y$.
+Given that the rope should be in the direction of it's tension,
+\begin{equation}
+    y' = \frac{T_y}{T_x} \quad \Rightarrow \quad y''=\frac{T_y'}{T_x}=
+    \frac{\lambda g}{T_x}\sqrt{1+{y'}^2}
+\end{equation}
+Solving the equation for $y'$ through a straightforward integration produces
+\begin{equation}
+    y' = \sinh\inb({\frac{\lambda g x}{T_x} + C})
+\end{equation}
+$C$ is then fixed to $C=0$
+by choosing the origin of $x$ coordinate in the middle of the nails.
+We will see, that we don't need the expression of $y(x)$ itself.
+
+The remaining parameter $T_x$ is resolved by the boundary conditions.
+Those can be imposed in a multitude of ways.
+In our case, we consider that the hanging section of the rope
+is prevented from slipping down due to counterweight sections of the rope
+of length $h$ on the either side.
+So $T(\pm w/2) = \lambda g h$, resulting in a transcendental equation for $T_x$, 
+\begin{equation}
+    \lambda g h = T_x \cosh \inb({\frac{\lambda g w}{2 T_x}})
+    \labele{b1}
+\end{equation}
+The length of the hanging section of the rope can be found through integration,
+or by using the equilibrium condition of the two $T_y(\pm w/2)$-s
+on the either side balances the gravity $\lambda (L-2h) g$,
+where $L$ is the full length of the rope. In both cases the equation is
+\begin{equation}
+    \lambda g (L - 2h) = 2 T_x \sinh \inb({\frac{\lambda g w}{2 T_x}})
+    \labele{b2}
+\end{equation}
+
+The final question is whether \refe{b1} and \refe{b2} have a physical solution,
+i.e. such that $0<h<L/2$ ($T_x>0$ follows automatically).
+Adding the equations together gives
+\begin{equation}
+    \lambda g L = 2 T_x \inb({\cosh \inb({\frac{\lambda g w}{2 T_x}}) +
+                              \sinh \inb({\frac{\lambda g w}{2 T_x}})})
+    \quad\Leftrightarrow\quad
+    \frac{\lambda g L}{2 T_x} = \exp\inb({\frac{\lambda g w}{2 T_x}})
+\end{equation}
+It is obvious, that if this equation has a solution $L>0$,
+then \refe{b1}'s solution will satisfy $0<h<L/2$.
+If we denote $L=kw$, the equation becomes $k\beta=e^\beta$.
+It has a solution only for such values of $k$,
+that the line $y=kx$ intersects the curve $y=e^x$.
+The boundary case is the $k_0$, when $y=k_0 x$ is tangent to $y=e^x$.
+If they touch at point $(x_0, y_0)$, then $y_0=k_0 x_0$, $y_0=e^{x_0}$ and
+$k_0=(e^x)'|_{x_0}=e^{x_0}$. Thus $x_0=1$, $k_0=e$.
+
+The minimal length of a "hangable" rope is thereby $L_0=ew$.
